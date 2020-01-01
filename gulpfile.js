@@ -157,7 +157,7 @@ function splitGeojson(type) {
   console.log("\n *Split geoJSON START* \n")
   // 시군구 데이터 시도별로 자르기
   const fileName = shpPath[type].json
-  const contents = iconv.decode(fs.readFileSync(fileName), 'utf-8')
+  const contents = iconv.decode(fs.readFileSync(fileName), 'euc-kr')
   const features = {}
   const jsonContent = JSON.parse(contents)
   const typePath = DIST + type
@@ -189,7 +189,7 @@ function splitGeojson(type) {
       "type": "FeatureCollection",
       "features": features[key]
     }
-    fs.writeFileSync(`${typePath}/${key}.json`, JSON.stringify(jsonStr))
+    fs.writeFileSync(`${typePath}/${key}.json`, JSON.stringify(jsonStr), 'utf-8')
   }
   console.log("\n *Split geoJSON END* \n")
 }
