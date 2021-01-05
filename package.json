@@ -10,7 +10,7 @@
   "license": "MIT",
   "devDependencies": {
     "adm-zip": "0.4.16",
-    "axios": "0.20.0",
+    "axios": "0.21.1",
     "cheerio": "0.22.0",
     "download": "8.0.0",
     "gulp": "4.0.2",
